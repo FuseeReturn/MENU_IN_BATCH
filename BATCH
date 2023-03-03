@@ -1,0 +1,117 @@
+@echo off
+color a
+title Script
+
+:start
+color a
+echo Script v1 beta  
+echo 1: Version of Windows
+echo 2: Run regedit
+echo 3: Redame
+echo 4: ??? 
+echo 5: Run control panel
+echo 6: Shutdown Windows
+echo 7: Run cmd.exe
+echo 8: Exit Program
+echo. 
+set "choiseinput="
+set /p "choiseinput=Please choose an option: " 
+
+if "%choiseinput%"=="1" goto choise1
+if "%choiseinput%"=="2" goto choise2
+if "%choiseinput%"=="3" goto choise3
+if "%choiseinput%"=="4" goto choise4
+if "%choiseinput%"=="5" goto choise5
+if "%choiseinput%"=="6" goto choise6
+if "%choiseinput%"=="7" goto choise7
+if "%choiseinput%"=="8" goto exit
+echo Invalid Input
+echo.
+echo Please choose a valid option ! 
+set /p "choiseinput=Please choose an option:" 
+
+:choise1
+color a
+cls
+set "view=" 
+set /p "view=Press enter for view the version and edition of Windows (winver.exe) 
+start winver.exe
+echo Succes ! 
+echo.
+pause
+cls
+goto start
+
+:choise2 
+color a
+cls
+set "run="
+set /p "run=Press enter for run REGEDIT.exe" 
+start regedit.exe
+echo Succes  ! 
+echo. 
+pause
+cls
+goto start
+
+:choise3
+color a
+cls
+set "view=" 
+set /p "view=Press enter for view Redame files!" 
+start REDAME.txt
+echo Succes! 
+echo. 
+pause
+cls
+goto start
+
+:choise4
+color a
+cls
+set "fun=" 
+set /p "fun=FUN" 
+echo F
+pause
+echo U
+pause
+echo N 
+cls
+goto start 
+
+:choise5
+color a
+cls
+set "control=" 
+set /p "control=Press enter for start the control pannel!" 
+start control.exe
+echo Succes ! 
+echo.
+pause
+cls
+goto start
+
+:choise6
+color a
+cls
+set "shutdown=" 
+set /p "shutdown= Attention, all unsaved data will all be deleted! Please be careful, and before pressing any keys, make sure you have saved your text files (ctrl+s).Press enter for shutdown your computer" 
+pause
+shutdown -s -t 5
+goto start  
+ 
+:choise7
+color a
+cls
+set "word=" 
+echo For start word.exe, press enter
+pause
+start cmd.exe
+goto start
+
+
+
+:exit
+color F
+start thanks.vbs
+exit /b 
